@@ -1,0 +1,27 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>Pagina cambio colore forme geometriche</h1>
+        <div id="quadrato" 
+            style="
+            height: 100px;
+            width:100 ;
+            border-color: black;
+            border-style: solid;"
+        ></div>
+        <br>
+        <button id="btnverde">Verde</button>
+        <button id="btnrosso">Rosso</button>
+
+        <script>
+            document.getElementById("btnrosso").addEventListener("click", function(){
+                document.getElementById("quadrato").setAttribute("style", "height: 100px; width: 100; border-color: black; border-style: solid; background-color: red");
+            });
+            document.getElementById("btnverde").addEventListener("click", function(){
+                document.getElementById("quadrato").setAttribute("style", "height: 100px; width: 100; border-color: black; border-style: solid; background-color: green");
+            });
+        </script>
+    </body>
+</html>
