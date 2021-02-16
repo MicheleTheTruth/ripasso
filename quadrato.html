@@ -11,29 +11,64 @@
         height: 100px;
         width: 100px;
         border-color: black;
-        border-style: solid;"
+        border-style: solid;
+        "
     ></div>
-    <button id="btnVerde">Verde</button>
-    <button id="btnRosso">Rosso</button>
+    <button id="Red-">-</button><input type="number" id="red"><button id="Red+">+</button><br>
+    <button id="Green-">-</button><input type="number" id="green"><button id="Green+">+</button><br>
+    <button id="Blue-">-</button><input type="number" id="blue"><button id="Blue+">+</button><br>
+    <button id="conferma">Conferma</button>
 
     <script>
-      document.getElementById("btnRosso").addEventListener("click", function(){
-        changeColor("red");
-        }
-      );
-      document.getElementById("btnVerde").addEventListener("click", function(){
-        changeColor("green");
-        }
-      );
-
+      document.getElementById("Red-").addEventListener("click", function(){
+        var val=document.getElementById("red").value;
+        val--;
+        document.getElementById("red").value=val;
+        console.log(document.getElementById("red").value);
+      });
+      document.getElementById("Red+").addEventListener("click", function(){
+        var val=document.getElementById("red").value;
+        val++;
+        document.getElementById("red").value=val;
+        console.log(document.getElementById("red").value);
+      });
+      document.getElementById("Green-").addEventListener("click", function(){
+        var val=document.getElementById("green").value;
+        val--;
+        document.getElementById("green").value=val;
+        console.log(document.getElementById("green").value);
+      });
+      document.getElementById("Green+").addEventListener("click", function(){
+        var val=document.getElementById("green").value;
+        val++;
+        document.getElementById("green").value=val;
+        console.log(document.getElementById("green").value);
+      });
+      document.getElementById("Blue-").addEventListener("click", function(){
+        var val=document.getElementById("blue").value;
+        val--;
+        document.getElementById("blue").value=val;
+        console.log(document.getElementById("blue").value);
+      });
+      document.getElementById("Blue+").addEventListener("click", function(){
+        var val=document.getElementById("blue").value;
+        val++;
+        document.getElementById("blue").value=val;
+        console.log(document.getElementById("blue").value);
+      });
+    </script>
+    <script>
+      document.getElementById("conferma").addEventListener("click", function(){
+        rgbColor=(document.getElementById("red").value)+", "+(document.getElementById("green").value)+", "+(document.getElementById("blue").value);
+        console.log(rgbColor);
+        changeColor(rgbColor);
+        });
       var changeColor = function (c) {
         document.getElementById("div1").setAttribute(
             "style",
             "height: 100px;width: 100px;border-color: black;" +
-              "border-style: solid;background-color : " +
-              c
-        );
-      };
+            "border-style: solid;background-color : rgb("+c+")"
+        );};      
     </script>
   </body>
 </html>
